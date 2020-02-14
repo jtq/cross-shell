@@ -25,8 +25,8 @@ But no matter what you try:
  - scripts/mybuildscript (Windows: `'scripts' is not recognized as an internal or external command, operable program or batch file.`)
  - scripts\mybuildscript (bash: `bash: scriptsmybuildscript: command not found`)
  - .\scripts\mybuildscript (bash: `bash: .scriptsmybuildscript: command not found`)
- - scripts\\mybuildscript (bash: `bash: scripts\mybuildscript: command not found`)
- - .\\scripts\\mybuildscript (bash: `bash: .\scripts\mybuildscript: command not found`)
+ - scripts\\\\mybuildscript (bash: `bash: scripts\mybuildscript: command not found`)
+ - .\\\\scripts\\\\mybuildscript (bash: `bash: .\scripts\mybuildscript: command not found`)
 
 ...you can't invoke that script in a cross-platform way.
 
