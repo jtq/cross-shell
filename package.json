@@ -1,0 +1,22 @@
+{
+  "name": "cross-shell",
+  "version": "0.0.1",
+  "description": "Cross-platform command/script invoker that normalises and translates paths from unixlike to windowslike and vice-versa depending on OS/shell",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Palmer",
+  "license": "ISC",
+  "bin": {
+    "cross-shell": "./cli.js"
+  },
+  "keywords": [
+    "cross-environment",
+    "environment variable",
+    "windows"
+  ],
+  "devDependencies": {
+    "cross-spawn": "^7.0.1"
+  }
+}
