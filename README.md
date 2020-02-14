@@ -61,4 +61,21 @@ As cross-shell delegates execution of the command to the OS's native shell (whic
 
 By default `node` (and hence `cross-shell`) selects the **native** shell for your OS to execute the passed command in. 
 
-Normally this will be the same as the shell you're invoking `cross-shell` from, but if you use a non-native shell then it will be different - for example when running bash under WSL in Windows your command will execute in a cmd.exe shell, not in a bash shell.
+Normally this will be the same as the shell you're invoking `cross-shell` from, but if you use a non-native shell then it will be different - for example when running bash under WSL in Windows, by default your command will execute in a cmd.exe shell, not in a bash shell.
+
+If you want cross-shell to try to determine the shell you're currently running it on and execute the passed command under the same shell, use the `-p` (`--preserve-shell`) parameter.
+
+For example, in bash running under WSL for Windows:
+
+    $ cross-shell ver
+
+    
+    Microsoft Windows [Version 10.0.18362.657]
+
+Here cross-shell defaults to executing the passed command in the native shell for Windows (cmd.exe), which has a `ver` command returning the version of the operating system.
+
+    $ cross-shell -p ver
+
+    /usr/bin/bash: ver: command not found
+
+Here we tell cross-shell to try to preserve the current shell, so it realises it's been invoked under bash and executes the passed command under a bash shell as well (which then throws an error because `ver` is not a valid bash command).
